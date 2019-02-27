@@ -15,9 +15,11 @@ public class ReadFile {
       String line = inf.nextLine();
       System.out.println(line);
     }
+
+    System.out.println(numLines("Maze1.txt"));
   }
 
-  public ReadFile() throws FileNotFoundException{
+/*  public ReadFile() throws FileNotFoundException{
     File maze1 = new File("Maze1.txt");
     Scanner inf = new Scanner(maze1);
 
@@ -27,11 +29,12 @@ public class ReadFile {
       }
     }
 
-  }
+  }*/
 
-  private int numLines(){
+
+  private int numLines(String filename){
     //counts how many lines a file has
-    File maze1 = new File("Maze1.txt");
+    File maze1 = new File(filename);
     Scanner inf = new Scanner(maze1);
     int numLines;
 

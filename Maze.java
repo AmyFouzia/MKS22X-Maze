@@ -4,7 +4,7 @@ public class Maze{
 
 
     private char[][]maze;
-    private boolean animate;//false by default
+    private boolean animate = false;//false by default
 
     /*Constructor loads a maze text file, and sets animate to false by default.
 
