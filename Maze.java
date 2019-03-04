@@ -127,7 +127,8 @@ public class Maze{
 
 
             //and start solving at the location of the s.
-
+            int row = 0;
+            int col = 0;
             return solve(row, col, 0);
 
 
@@ -179,11 +180,12 @@ public class Maze{
           //been here
           maze[row][col] = '@';
           int res = solve(Nrow, Ncol, numSteps + 1);
-          if(){
 
+          if(res != -1){
+            return res; //valid move
           }
           else{
-
+            maze[row][col] = '.'; //invalid move
           }
         }
 
