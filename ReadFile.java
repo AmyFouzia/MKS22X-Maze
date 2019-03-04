@@ -8,13 +8,12 @@ public class ReadFile {
 //string version
   public static void main(String args[]) throws FileNotFoundException{
     File maze1 = new File("Maze1.txt");
-
     Scanner inf = new Scanner(maze1);
 
     ArrayList<String> ref = new ArrayList<String>();
     while(inf.hasNextLine()){
       String line = inf.nextLine();
-      System.out.println(line);
+      System.out.println(line); //string version
       ref.add(line);
     }
 
@@ -31,6 +30,11 @@ public class ReadFile {
       }
     }
 
+    System.out.println( toString(field) );
+  }
+
+
+  public static String toString(String[][]field){
     String res = "";
     for(int i = 0; i < field.length; i++){
       for(int j = 0; j < field[i].length; j++){
@@ -38,6 +42,7 @@ public class ReadFile {
       }
       res += "\n";
     }
-    System.out.println(res);
+    return res;
   }
+
 }
