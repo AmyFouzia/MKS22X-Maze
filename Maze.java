@@ -5,6 +5,8 @@ public class Maze{
 
     private char[][]maze;
     private boolean animate = false;//false by default
+    int Start;
+    int End;
 
     /*Constructor loads a maze text file, and sets animate to false by default.
 
@@ -46,15 +48,22 @@ public class Maze{
           }
         }
 
+      if(Start != 1 || End != 1){
+        throw new IllegalStateException();
+      }
 
     }
 
-    public countLetters(char[][] maze){
-      int Start = 0;
-      int End = 0;
+    public void countLetters(char[][] maze){
+      Start = 0;
+      End = 0;
 
-      for(int i = 0; i < maze.length; i++){
+      for(int i = 0; i < maze.length; i++){//loop thru to find letters
         for(int j = 0; j < maze[i].length; j++){
+          if(maze[i][j] == 'S') Start++;
+          if(maze[i][j] == 'E') End++;
+        }
+      }
     }
 
 
@@ -121,6 +130,7 @@ public class Maze{
             //and start solving at the location of the s.
 
             //return solve(???,???);
+            return 1;
 
     }
 
@@ -156,6 +166,10 @@ public class Maze{
         //COMPLETE SOLVE
 
         return -1; //so it compiles
+    }
+
+    public static void main(String args[]){
+      
     }
 
 
