@@ -5,8 +5,6 @@ import java.util.*;
 import java.io.*;
 
 public class ReadFile {
-
-
 //string version
   public static void main(String args[]) throws FileNotFoundException{
     File maze1 = new File("Maze1.txt");
@@ -16,7 +14,7 @@ public class ReadFile {
     ArrayList<String> ref = new ArrayList<String>();
     while(inf.hasNextLine()){
       String line = inf.nextLine();
-      //System.out.println(line);
+      System.out.println(line);
       ref.add(line);
     }
 

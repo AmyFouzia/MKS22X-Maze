@@ -64,10 +64,16 @@ public class Maze{
 
     */
     public String toString(){
-
-            return "WRITE THIS METHOD";
-
+      String res = " ";
+      for(int i = 0; i < maze.length; i++){
+        for(int j = 0; j < maze[i].length; j++){
+          res += maze[i][j];
+        }
+        res += "\n";
+      }
+      return res;
     }
+
 
 
 
