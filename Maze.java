@@ -55,6 +55,8 @@ public class Maze{
 
     }
 
+    // When the file is not found OR the file is invalid (not exactly 1 E and 1 S) then: throw a FileNotFoundException or IllegalStateException
+
     public void countLetters(char[][] maze){
       Start = 0;
       End = 0;
@@ -91,10 +93,6 @@ public class Maze{
         System.out.println("\033[2J\033[1;1H");
 
     }
-
-
-
-
 
 
    /*Return the string that represents the maze.
@@ -174,7 +172,14 @@ public class Maze{
           return -1;
         }
 
+        for(int i = 0; i < moves.length; i++){
+          if(){
 
+          }
+          else{
+
+          }
+        }
 
         return -1; //so it compiles
     }
