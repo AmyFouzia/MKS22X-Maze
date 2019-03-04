@@ -26,20 +26,19 @@ public class Maze{
 
     public Maze(String filename) throws FileNotFoundException{
         //COMPLETE CONSTRUCTOR
-        File maze1 = new File("Maze1.txt");
+        File maze1 = new File(filename);
         Scanner inf = new Scanner(maze1);
 
         ArrayList<String> ref = new ArrayList<String>();
         while(inf.hasNextLine()){
           String line = inf.nextLine();
-          System.out.println(line); //string version
           ref.add(line);
         }
 
       //better way to find/store these values
       int numLines = ref.size();
       int charsPerLine = ref.get(0).length();
-      String[][] field = new String[numLines][charsPerLine];
+      maze = new char[numLines][charsPerLine];
 
     //2d array version
     //loop and add to field
