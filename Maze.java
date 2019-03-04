@@ -5,6 +5,7 @@ public class Maze{
 
     private char[][]maze;
     private boolean animate = false;//false by default
+    int[][] moves = new int[][] {{-1,0},{1,0},{0,1},{0,-1}};
     int Start;
     int End;
 
@@ -173,7 +174,7 @@ public class Maze{
           return -1;
         }
 
-        
+
 
         return -1; //so it compiles
     }
