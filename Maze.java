@@ -163,7 +163,17 @@ public class Maze{
             wait(20);
         }
 
-        //COMPLETE SOLVE
+        //solved maze (base case)
+        if(maze[row][col] == 'E'){
+          return numSteps;
+        }
+
+        //invalid space
+        if(maze[row][col] != ' '){
+          return -1;
+        }
+
+        
 
         return -1; //so it compiles
     }
