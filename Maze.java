@@ -18,9 +18,7 @@ public class Maze{
       2. The maze has a border of '#' around the edges. So you don't have to check for out of bounds!
 
 
-      3. When the file is not found OR the file is invalid (not exactly 1 E and 1 S) then:
-
-         throw a FileNotFoundException or IllegalStateException
+      3. When the file is not found OR the file is invalid (not exactly 1 E and 1 S) then: throw a FileNotFoundException or IllegalStateException
 
     */
 
@@ -49,6 +47,14 @@ public class Maze{
         }
 
 
+    }
+
+    public countLetters(char[][] maze){
+      int Start = 0;
+      int End = 0;
+
+      for(int i = 0; i < maze.length; i++){
+        for(int j = 0; j < maze[i].length; j++){
     }
 
 
