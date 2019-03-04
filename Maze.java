@@ -26,6 +26,30 @@ public class Maze{
 
     public Maze(String filename) throws FileNotFoundException{
         //COMPLETE CONSTRUCTOR
+        File maze1 = new File("Maze1.txt");
+        Scanner inf = new Scanner(maze1);
+
+        ArrayList<String> ref = new ArrayList<String>();
+        while(inf.hasNextLine()){
+          String line = inf.nextLine();
+          System.out.println(line); //string version
+          ref.add(line);
+        }
+
+      //better way to find/store these values
+      int numLines = ref.size();
+      int charsPerLine = ref.get(0).length();
+      String[][] field = new String[numLines][charsPerLine];
+
+    //2d array version
+    //loop and add to field
+        for (int i = 0; i < numLines; i++){
+          for (int j = 0; j < charsPerLine; j++){
+            field[i][j] = ref.get(i).charAt(j) + "";
+          }
+        }
+
+
     }
 
 
@@ -73,8 +97,6 @@ public class Maze{
       }
       return res;
     }
-
-
 
 
     /*Wrapper Solve Function returns the helper function
