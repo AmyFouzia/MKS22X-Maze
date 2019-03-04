@@ -173,6 +173,12 @@ public class Maze{
         }
 
         for(int i = 0; i < moves.length; i++){
+
+          int Nrow = row + moves[i][0];
+          int Ncol = col + moves[i][1];
+          //been here
+          maze[row][col] = '@';
+          int res = solve(Nrow, Ncol, numSteps + 1);
           if(){
 
           }
