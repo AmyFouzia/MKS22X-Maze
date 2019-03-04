@@ -1,11 +1,14 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
+import java.util.*;
+import java.io.*;
 
 public class ReadFile {
 
-  private String[][] field;
+  private String[][] field = new String[numLines][charsPerLine];
   private static int numLines = 0;
+  private static int charsPerLine = 0;
 
   public static void main(String args[]) throws FileNotFoundException{
     File maze1 = new File("Maze1.txt");
@@ -25,8 +28,8 @@ public class ReadFile {
     Scanner inf = new Scanner(maze1);
 
     for (i = 0; i < numLines; i++){
-      for (j = 0; j < numLines; j++){
-        field[i]
+      for (j = 0; j < charsPerLine; j++){
+        field[i][j]
       }
     }
 
