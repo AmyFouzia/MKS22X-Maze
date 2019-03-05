@@ -1,3 +1,8 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.*;
+import java.io.*;
+
 public class Driver{
     public static void main(String[]args){
       String filename = "data1.dat";
@@ -10,6 +15,8 @@ public class Driver{
         System.out.println(f);
       }catch(FileNotFoundException e){
         System.out.println("Invalid filename: "+filename);
+      }catch(IllegalStateException e){
+      System.out.println("Not a valid file");
       }
     }
 }

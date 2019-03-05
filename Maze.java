@@ -1,8 +1,9 @@
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.*;
 import java.io.*;
+
 public class Maze{
-
-
     private char[][]maze;
     private boolean animate = false;//false by default
     int[][] moves = new int[][] {{-1,0},{1,0},{0,1},{0,-1}};
@@ -27,8 +28,8 @@ public class Maze{
 
     public Maze(String filename) throws FileNotFoundException{
         //COMPLETE CONSTRUCTOR
-        File maze1 = new File(filename);
-        Scanner inf = new Scanner(maze1);
+        File mazetxt = new File(filename);
+        Scanner inf = new Scanner(mazetxt);
 
         ArrayList<String> ref = new ArrayList<String>();
         while(inf.hasNextLine()){
@@ -129,6 +130,17 @@ public class Maze{
             //and start solving at the location of the s.
             int row = 0;
             int col = 0;
+
+            for(int i = 0; i < maze.length; i++){
+              for(int j = 0; j < maze[i].length; j++){
+                if(maze[i][j] == 'S'){
+                  row = i;
+                  col = j;
+                }
+              }
+            }
+            maze[row][col] = ' ';
+
             return solve(row, col, 0);
 
 
