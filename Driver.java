@@ -1,22 +1,41 @@
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.util.*;
 import java.io.*;
 
 public class Driver{
     public static void main(String[]args){
-      String filename = "data1.dat";
       try{
-        Maze f;
-        f = new Maze(filename);//true animates the maze.
+        String file1 = "data1.dat";
+        Maze maze1 = new Maze(file1);
+        System.out.println(maze1);
+        // maze1.setAnimate(true);
+        maze1.solve();
+        System.out.println(maze1);
 
-        f.setAnimate(true);
-        f.solve();
-        System.out.println(f);
+        String file2 = "data2.dat";
+        Maze maze2 = new Maze(file2);
+        System.out.println(maze2);
+        // maze2.setAnimate(true);
+        maze2.solve();
+        System.out.println(maze2);
+
+        String file3 = "data3.dat";
+        Maze maze3 = new Maze(file3);
+        System.out.println(maze3);
+        // maze3.setAnimate(true);
+        maze3.solve();
+        System.out.println(maze3);
+
+        String file4 = "data4.dat";
+        Maze maze4 = new Maze(file4);
+        System.out.println(maze4);
+        // maze4.setAnimate(true);
+        System.out.println(maze4.solve());
+
+
       }catch(FileNotFoundException e){
-        System.out.println("Invalid filename: "+filename);
+        System.out.println("Invalid filename");
       }catch(IllegalStateException e){
-      System.out.println("Not a valid file");
+        System.out.println("Not a valid file");
       }
     }
 }

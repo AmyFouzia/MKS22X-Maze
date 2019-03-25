@@ -45,8 +45,18 @@ public class Maze{
     //2d array version
     //loop and add to field
         for (int i = 0; i < numLines; i++){
-          for (int j = 0; j < charsPerLine; j++){
+          for (int j = 0; j < ref.get(0).length(); j++){
             maze[i][j] = ref.get(i).charAt(j);
+          }
+        }
+
+        Start = 0;
+        End = 0;
+
+        for(int i = 0; i < maze.length; i++){//loop thru to find letters
+          for(int j = 0; j < maze[i].length; j++){
+            if(maze[i][j] == 'S') Start++;
+            if(maze[i][j] == 'E') End++;
           }
         }
 
@@ -57,18 +67,6 @@ public class Maze{
     }
 
     // When the file is not found OR the file is invalid (not exactly 1 E and 1 S) then: throw a FileNotFoundException or IllegalStateException
-
-    public void countLetters(char[][] maze){
-      Start = 0;
-      End = 0;
-
-      for(int i = 0; i < maze.length; i++){//loop thru to find letters
-        for(int j = 0; j < maze[i].length; j++){
-          if(maze[i][j] == 'S') Start++;
-          if(maze[i][j] == 'E') End++;
-        }
-      }
-    }
 
 
     private void wait(int millis){
@@ -142,8 +140,6 @@ public class Maze{
             maze[row][col] = ' ';
 
             return solve(row, col, 0);
-
-
     }
 
     /*
@@ -203,10 +199,5 @@ public class Maze{
 
         return -1; //so it compiles
     }
-
-    public static void main(String args[]){
-
-    }
-
 
 }
